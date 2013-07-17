@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       login user
       redirect_to root_path
     else
+      @message = "Invalid Username or Password"
       render :new
     end
   end

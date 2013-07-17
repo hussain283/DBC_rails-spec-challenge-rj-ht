@@ -1,5 +1,9 @@
 <ul>
   <%= form_for @user do |f| %>
+   <% @user.errors.full_messages.each do |msg| %>
+      <div>Errors:</div>
+      <p><%= msg %></p>
+   <% end %>
     <li>
       <%= f.label :email %>
       <%= f.email_field :email %>

@@ -1,12 +1,16 @@
 require 'spec_helper'
 
 describe Post do
+  let(:title) { 'hoorton hears a hoo' }
+  let(:content) { 'space jam is awesome' }
+  let(:post1) { Post.create(title: title, content: content)}
+
   it "title should be automatically titleized before save" do
-    pending
+    expect(post1.title).to eq(title.titleize)
   end
 
   it "post should be unpublished by default" do
-    pending
+    expect(post1.is_published).to be_false
   end
 
   it "slug should be automatically generated" do
@@ -19,3 +23,4 @@ describe Post do
     post.slug.should eq "new-post"
   end
 end
+

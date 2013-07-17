@@ -1,5 +1,8 @@
 <h3>Login</h3>
 <%= form_tag sessions_path do %>
+  <% if @message %>
+    <div><%= @message %></div>
+  <% end %>
   <%= label_tag :email %>
   <%= email_field_tag :email %>
   <%= label_tag :password %>
